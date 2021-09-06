@@ -33,7 +33,7 @@ jobs:
         id: npm-cache
         with:
           path: ~/.npm
-          kkey: ${{ runner.OS }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.OS }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.OS }}-npm-cache-
       
