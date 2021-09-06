@@ -12,7 +12,9 @@
     >
 </a>
 <a href="https://codecov.io/gh/iNoles/spacex-server">
-   <img src="https://codecov.io/gh/iNoles/spacex-server/branch/main/graph/badge.svg?token=VLGKKY3F8H"/>
+   <img
+        alt="Code Coverage"
+        src="https://img.shields.io/codecov/c/github/iNoles/spacex-server.svg?style=for-the-badge"/>
 </a>
 </div>
 
