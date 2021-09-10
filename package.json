@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/server.js",
+  "homepage": "https://github.com/iNoles/spacex-server",
   "scripts": {
     "lint": "eslint **/*.ts",
     "lint:fix": "eslint **/*.ts --fix",
@@ -10,7 +11,7 @@
   },
   "keywords": [],
   "author": "Jonathan Steele",
-  "license": "ISC",
+  "license": "GPL-3.0-only",
   "dependencies": {
     "apollo-datasource-rest": "^3.2.0",
     "apollo-server-core": "^3.3.0",
@@ -27,5 +28,9 @@
     "jest": "^27.1.1",
     "ts-jest": "^27.0.5",
     "typescript": "^4.4.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iNoles/spacex-server.git"
   }
 }

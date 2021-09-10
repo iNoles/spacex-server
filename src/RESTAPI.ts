@@ -11,6 +11,10 @@ class SpaceXAPI extends RESTDataSource {
 
     cores = () => this.get(`v4/cores`);
 
+    crew = ({id}) => this.get(`v4/crew/${id}`);
+
+    crews = () => this.get(`v4/crew`);
+
     dragon = ({id}) => this.get(`v4/dragons/${id}`);
 
     dragons = () => this.get(`v4/dragons`);

@@ -8,6 +8,8 @@ const typeDefs = gql`
         company: Company
         core(id: String!): Core
         cores: [Core]
+        crew(id: String!): Crew
+        crews: [Crew]
         dragon(id: String!): Dragon
         dragons: [Dragon]
         history(id: String!): History
@@ -41,7 +43,13 @@ const typeDefs = gql`
         upcoming
     }
 
+    enum Order {
+        asc
+        desc
+    }
+
     type Capsule {
+        id: String
         serial: String
         status: String
         type: String
@@ -52,6 +60,7 @@ const typeDefs = gql`
     }
 
     type Company {
+        id: String
         name: String
         founder: String
         founded: Int
@@ -92,6 +101,15 @@ const typeDefs = gql`
         asds_attempts: Int
         last_update: String
         asds_landings: Int
+    }
+
+    type Crew {
+        id: String
+        name: String
+        image: String
+        wikipedia: String
+        launches: [String]
+        status: String
     }
 
     type Dragon {
@@ -159,6 +177,7 @@ const typeDefs = gql`
     }
 
     type Landingpad {
+        id: String
         name: String
         full_name: String
         status: String
@@ -291,6 +310,7 @@ const typeDefs = gql`
     }
 
     type Roadster {
+        id: String
         name: String
         launch_date_utc: String
         launch_date_unix: Int
@@ -447,7 +467,7 @@ const typeDefs = gql`
 
     type Ship {
         name: String
-        id: Int
+        id: String
         legacy_id: String
         model: String
         type: String

@@ -10,6 +10,11 @@ const resolvers = {
     cores: (_: any, {}: any,
         {dataSources}: any) => dataSources.api.cores(),
 
+    crew: (_: any, {id}: any, {dataSources}: any,
+    ) => dataSources.api.crew({id}),
+    crews: (_: any, {}: any,
+        {dataSources}: any) => dataSources.api.crews(),
+
     dragon: (_: any, {id}: any, {dataSources}: any,
     ) => dataSources.api.dragon({id}),
     dragons: (_: any, {}: any,
