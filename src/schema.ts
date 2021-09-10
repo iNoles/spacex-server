@@ -4,7 +4,7 @@ import {gql} from 'apollo-server-fastify';
 const typeDefs = gql`
     type Query {
         capsule(id: String!): Capsule
-        capsules(range: CapsuleRange): [Capsule]
+        capsules: [Capsule]
         company: Company
         core(id: String!): Core
         cores: [Core]
@@ -29,11 +29,6 @@ const typeDefs = gql`
         ships: [Ship]
         starlink(id: String!): StarLink
         starlinks: [StarLink]
-    }
-
-    enum CapsuleRange {
-        past
-        upcoming
     }
 
     enum LaunchRange {

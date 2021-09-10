@@ -2,8 +2,8 @@ const resolvers = {
   Query: {
     capsule: (_: any, {id}: any, {dataSources}: any,
     ) => dataSources.api.capsule({id}),
-    capsules: (_: any, {range}: any,
-        {dataSources}: any) => dataSources.api.capsules({range}),
+    capsules: (_: any, {}: any,
+        {dataSources}: any) => dataSources.api.capsules(),
 
     core: (_: any, {id}: any, {dataSources}: any,
     ) => dataSources.api.core({id}),
