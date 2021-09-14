@@ -13,7 +13,6 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [ main ]
     # Workflows triggered by Dependabot on the "push" event run with read-only access
     # Code Scanning requires write access, so ignore dependabot branches
     branches-ignore: [dependabot/**]
