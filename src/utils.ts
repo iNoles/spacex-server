@@ -12,8 +12,11 @@ const body = ({
   const options: any = res['options'] = {};
   if (limit) options.limit = limit;
   if (offset) options.offset = offset;
-  if (order) options.order = order;
-  if (sort) options.sort = sort;
+  if (sort) {
+    const sortObject = options['sort'] = {};
+    sortObject[sort] = order || 'asc';
+    options.sort = sortObject;
+  }
   return res;
 };
 

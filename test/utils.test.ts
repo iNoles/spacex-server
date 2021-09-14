@@ -6,8 +6,7 @@ describe('Request body generation', () => {
 
   it('should put in order and sort parameters', () => {
     const actual = body({order, sort});
-    expect(actual).toHaveProperty('options.order', order);
-    expect(actual).toHaveProperty('options.sort', sort);
+    expect(actual.options.sort.flight_number).toEqual('desc');
   });
 
   it('should not put in missing order parameter', () => {

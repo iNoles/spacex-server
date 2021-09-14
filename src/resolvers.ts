@@ -1,36 +1,63 @@
 const resolvers = {
   Query: {
-    capsule: (_: any, {id}: any, {dataSources}: any,
-    ) => dataSources.api.capsule({id}),
-    capsules: (_: any, {}: any,
-        {dataSources}: any) => dataSources.api.capsules(),
+    capsule: (_: any, {id}: any,
+        {dataSources}: any) => dataSources.api.capsule({id}),
+    capsules: async (_: any, {
+      limit, offset, order, sort,
+    }: any, {dataSources}: any) => {
+      const results = await dataSources.api.capsules({
+        limit, offset, order, sort,
+      });
+      return results['docs'];
+    },
 
-    core: (_: any, {id}: any, {dataSources}: any,
-    ) => dataSources.api.core({id}),
-    cores: (_: any, {}: any,
-        {dataSources}: any) => dataSources.api.cores(),
+    core: (_: any, {id}: any, {dataSources}: any) => dataSources.api.core({id}),
+    cores: async (_: any, {
+      limit, offset, order, sort,
+    }: any, {dataSources}: any) => {
+      const results = await dataSources.api.cores({
+        limit, offset, order, sort,
+      });
+      return results['docs'];
+    },
 
-    crew: (_: any, {id}: any, {dataSources}: any,
-    ) => dataSources.api.crew({id}),
-    crews: (_: any, {}: any,
-        {dataSources}: any) => dataSources.api.crews(),
+    crew: (_: any, {id}: any,
+        {dataSources}: any) => dataSources.api.crew({id}),
+    crews: async (_: any, {limit, offset, order, sort}: any,
+        {dataSources}: any) => {
+      const results = await dataSources.api.crews({
+        limit, offset, order, sort,
+      });
+      return results['docs'];
+    },
 
-    dragon: (_: any, {id}: any, {dataSources}: any,
-    ) => dataSources.api.dragon({id}),
-    dragons: (_: any, {}: any,
-        {dataSources}: any) => dataSources.api.dragons(),
+    dragon: (_: any, {id}: any,
+        {dataSources}: any) => dataSources.api.dragon({id}),
+    dragons: async (_: any, {limit, offset}: any,
+        {dataSources}: any) => {
+      const results = await dataSources.api.dragons({limit, offset});
+      return results['docs'];
+    },
 
-    history: (_: any, {id}: any, {dataSources}: any,
-    ) => dataSources.api.history({id}),
-    histories: (_: any, {}: any,
-        {dataSources}: any) => dataSources.api.histories(),
+    history: (_: any, {id}: any,
+        {dataSources}: any) => dataSources.api.history({id}),
+    histories: async (_: any, {limit, offset, order, sort}: any,
+        {dataSources}: any) => {
+      const results = await dataSources.api.histories({
+        limit, offset, order, sort,
+      });
+      return results['docs'];
+    },
 
     company: (_: any, __: any, {dataSources}: any) => dataSources.api.company(),
 
-    landingpad: (_: any, {id}: any, {dataSources}: any,
-    ) => dataSources.api.landingpad({id}),
-    landingpads: (_: any, {}: any,
-        {dataSources}: any) => dataSources.api.landingpads(),
+    landingpad: (_: any, {id}: any,
+        {dataSources}: any) => dataSources.api.landingpad({id}),
+    landingpads: async (_: any, {limit, offset}: any,
+        {dataSources}: any) => {
+      const results = await dataSources.api.landingpads({limit, offset});
+      return results['docs'];
+    },
 
     launch: (_: any, {id}: any, {dataSources}: any,
     ) => dataSources.api.launch({id}),
@@ -40,32 +67,59 @@ const resolvers = {
       range, ids,
     }),
 
-    launchpad: (_: any, {id}: any, {dataSources}: any,
-    ) => dataSources.api.launchpad({id}),
-    launchpads: (_: any, {}: any, {dataSources}: any,
-    ) => dataSources.api.launchpads(),
+    launchpad: (_: any, {id}: any,
+        {dataSources}: any) => dataSources.api.launchpad({id}),
+    launchpads: async (_: any, {limit, offset}: any,
+        {dataSources}: any) => {
+      const results = await dataSources.api.launchpads({limit, offset});
+      return results['docs'];
+    },
 
-    payload: (_: any, {id}: any, {dataSources}: any,
-    ) => dataSources.api.payload({id}),
-    payloads: (_: any, {}: any,
-        {dataSources}: any) => dataSources.api.payloads(),
+    payload: (_: any, {id}: any,
+        {dataSources}: any) => dataSources.api.payload({id}),
+    payloads: async (_: any, {
+      limit, offset, order, sort,
+    }: any, {dataSources}: any) => {
+      const results = await dataSources.api.payloads({
+        limit, offset, order, sort,
+      });
+      return results['docs'];
+    },
 
-    roadster: (_: any, __: any, {dataSources}: any,
-    ) => dataSources.api.roadster(),
+    roadster: (_: any, __: any,
+        {dataSources}: any) => dataSources.api.roadster(),
 
-    rocket: (_: any, {id}: any, {dataSources}: any,
-    ) => dataSources.api.rocket({id}),
-    rockets: (_: any, {}: any,
-        {dataSources}: any) => dataSources.api.rockets(),
+    rocket: (_: any, {id}: any,
+        {dataSources}: any) => dataSources.api.rocket({id}),
+    rockets: async (_: any, {
+      limit, offset, order, sort,
+    }: any, {dataSources}: any) => {
+      const results = await dataSources.api.rockets({
+        limit, offset, order, sort,
+      });
+      return results['docs'];
+    },
 
     ship: (_: any, {id}: any, {dataSources}: any) => dataSources.api.ship({id}),
-    ships: (_: any, {}: any,
-        {dataSources}: any) => dataSources.api.ships(),
+    ships: async (_: any, {
+      limit, offset, order, sort,
+    }: any, {dataSources}: any) => {
+      const results = await dataSources.api.ships({
+        limit, offset, order, sort,
+      });
+      return results['docs'];
+    },
 
-    starlink: (_: any, {id}: any, {dataSources}: any,
-    ) => dataSources.api.starlink({id}),
-    starlinks: (_: any, {}: any,
-        {dataSources}: any) => dataSources.api.starlinks(),
+    starlink: (_: any, {id}: any,
+        {dataSources}: any ) => dataSources.api.starlink({id}),
+    starlinks: async (_: any, {
+      limit, offset, order, sort,
+    }: any, {dataSources}: any) => {
+      const results = await dataSources.api.starlinks({
+        limit, offset, order, sort,
+      });
+      return results['docs'];
+    },
   },
 };
 

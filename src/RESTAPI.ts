@@ -1,33 +1,54 @@
 import {RESTDataSource} from 'apollo-datasource-rest';
+import body from './utils';
 
 class SpaceXAPI extends RESTDataSource {
     baseURL = 'https://api.spacexdata.com';
 
     capsule = ({id}) => this.get(`v4/capsules/${id}`);
 
-    capsules = () => this.get(`v4/capsules/`);
+    capsules = ({
+      limit, offset, order, sort,
+    }) => this.post(`v4/capsules/query`, body({
+      limit, offset, order, sort,
+    }));
 
     core = ({id}) => this.get(`v4/cores/${id}`);
 
-    cores = () => this.get(`v4/cores`);
+    cores = ({
+      limit, offset, order, sort,
+    }) => this.post(`v4/cores/query`, body({
+      limit, offset, order, sort,
+    }));
 
     crew = ({id}) => this.get(`v4/crew/${id}`);
 
-    crews = () => this.get(`v4/crew`);
+    crews = ({
+      limit, offset, order, sort,
+    }) => this.post(`v4/crew/query`, body({
+      limit, offset, order, sort,
+    }));
 
     dragon = ({id}) => this.get(`v4/dragons/${id}`);
 
-    dragons = () => this.get(`v4/dragons`);
+    dragons = ({limit, offset}) => this.post(`v4/dragons/query`, body({
+      limit, offset,
+    }));
 
     history = ({id}) => this.get(`v4/history/${id}`);
 
-    histories = () => this.get(`v4/history`);
+    histories = ({
+      limit, offset, order, sort,
+    }) => this.post(`v4/history/query`, body({
+      limit, offset, order, sort,
+    }));
 
     company = () => this.get(`v4/company`);
 
     landingpad = ({id}) => this.get(`v4/landpads/${id}`);
 
-    landingpads = () => this.get(`v4/landpads`);
+    landingpads = ({
+      limit, offset,
+    }) => this.post(`v4/landpads/query`, body({limit, offset}));
 
     launch = ({id}) => this.get(`v5/launches/${id}`);
 
@@ -41,25 +62,43 @@ class SpaceXAPI extends RESTDataSource {
 
     launchpad = ({id}) => this.get(`v4/launchpads/${id}`);
 
-    launchpads = () => this.get(`v4/launchpads`);
+    launchpads = ({limit, offset}) => this.post(`v4/launchpads/query`, body({
+      limit, offset,
+    }));
 
     payload = ({id}) => this.get(`v4/payloads/${id}`);
 
-    payloads = () => this.get(`v4/payloads`);
+    payloads = ({
+      limit, offset, order, sort,
+    }) => this.post(`v4/payloads/query`, body({
+      limit, offset, order, sort,
+    }));
 
     roadster = () => this.get(`v4/roadster`);
 
     rocket = ({id}) => this.get(`v4/rockets/${id}`);
 
-    rockets = () => this.get(`v4/rockets`);
+    rockets = ({
+      limit, offset, order, sort,
+    }) => this.post(`v4/rockets/query`, body({
+      limit, offset, order, sort,
+    }));
 
     ship = ({id}) => this.get(`v4/ships/${id}`);
 
-    ships = () => this.get(`v4/ships`);
+    ships = ({
+      limit, offset, order, sort,
+    }) => this.post(`v4/ships/query`, body({
+      limit, offset, order, sort,
+    }));
 
     starlink = ({id}) => this.get(`v4/starlink/${id}`);
 
-    starlinks = () => this.get(`v4/starlink`);
+    starlinks = ({
+      limit, offset, order, sort,
+    }) => this.post(`v4/starlink/query`, body({
+      limit, offset, order, sort,
+    }));
 }
 
 export default SpaceXAPI;

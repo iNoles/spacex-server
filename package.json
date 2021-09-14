@@ -2,7 +2,7 @@
   "name": "spacex-server",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/server.js",
+  "main": "dist/app.js",
   "homepage": "https://github.com/iNoles/spacex-server",
   "scripts": {
     "lint": "eslint **/*.ts",

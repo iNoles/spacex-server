@@ -14,7 +14,7 @@ describe('Crew', () => {
       const body = JSON.parse(res.body);
       expect(res.statusCode).toBe(200);
       expect(body.data).toHaveProperty('crews', expect.any(Array));
-      expect(body.data.crews.length).toEqual(18);
+      expect(body.data.crews.length).toBeGreaterThanOrEqual(10);
     });
   });
   describe('Single Crew', () => {

@@ -14,7 +14,7 @@ describe('Starlink', () => {
       const body = JSON.parse(res.body);
       expect(res.statusCode).toBe(200);
       expect(body.data).toHaveProperty('starlinks', expect.any(Array));
-      expect(body.data.starlinks.length).toBeGreaterThanOrEqual(20);
+      expect(body.data.starlinks.length).toBeGreaterThanOrEqual(10);
     });
   });
 

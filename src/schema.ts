@@ -4,31 +4,31 @@ import {gql} from 'apollo-server-fastify';
 const typeDefs = gql`
     type Query {
         capsule(id: String!): Capsule
-        capsules: [Capsule]
+        capsules(limit: Int, offset: Int, order: Order, sort: String): [Capsule]
         company: Company
         core(id: String!): Core
-        cores: [Core]
+        cores(limit: Int, offset: Int, order: Order, sort: String): [Core]
         crew(id: String!): Crew
-        crews: [Crew]
+        crews(limit: Int, offset: Int, order: Order, sort: String): [Crew]
         dragon(id: String!): Dragon
-        dragons: [Dragon]
+        dragons(limit: Int, offset: Int): [Dragon]
         history(id: String!): History
-        histories: [History]
+        histories(limit: Int, offset: Int, order: Order, sort: String): [History]
         landingpad(id: String!): Landingpad
-        landingpads: [Landingpad]
+        landingpads(limit: Int, offset: Int): [Landingpad]
         launch(id: String!): Launch
         launches(range: LaunchRange, ids: [String]): [Launch]
         launchpad(id: String!): Launchpad
-        launchpads: [Launchpad]
+        launchpads(limit: Int, offset: Int): [Launchpad]
         payload(id: String!): Payload
-        payloads: [Payload]
+        payloads(limit: Int, offset: Int, order: Order, sort: String): [Payload]
         roadster: Roadster
         rocket(id: String!): Rocket
-        rockets: [Rocket]
+        rockets(limit: Int, offset: Int): [Rocket]
         ship(id: String!): Ship
-        ships: [Ship]
+        ships(limit: Int, offset: Int, order: Order, sort: String): [Ship]
         starlink(id: String!): StarLink
-        starlinks: [StarLink]
+        starlinks(limit: Int, offset: Int, order: Order, sort: String): [StarLink]
     }
 
     enum LaunchRange {

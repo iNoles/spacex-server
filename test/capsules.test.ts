@@ -14,7 +14,7 @@ describe('Capsules', () => {
       const body = JSON.parse(res.body);
       expect(res.statusCode).toBe(200);
       expect(body).toHaveProperty('data.capsules', expect.any(Array));
-      expect(body.data.capsules.length).toBeGreaterThanOrEqual(18);
+      expect(body.data.capsules.length).toBeGreaterThanOrEqual(10);
     });
   });
 
