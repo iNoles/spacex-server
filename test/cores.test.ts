@@ -19,19 +19,38 @@ describe('Cores', () => {
   });
 
   describe('Sorting Cores', () => {
-    it('should descending cores', async () => {
-      const app = await createApp();
-      const res = await app.inject({
-        method: 'POST',
-        path: '/graphql',
-        payload: {
-          query: '{ cores(sort: "serial" order: desc) { serial } }',
-        },
+    describe('Descending', () => {
+      it('should descending cores', async () => {
+        const app = await createApp();
+        const res = await app.inject({
+          method: 'POST',
+          path: '/graphql',
+          payload: {
+            query: '{ cores(sort: "serial" order: desc) { serial } }',
+          },
+        });
+        const body = JSON.parse(res.body);
+        expect(res.statusCode).toBe(200);
+        expect(body.data).toHaveProperty('cores', expect.any(Array));
+        expect(body.data.cores[0]).toHaveProperty('serial', 'Merlin3C');
       });
-      const body = JSON.parse(res.body);
-      expect(res.statusCode).toBe(200);
-      expect(body.data).toHaveProperty('cores', expect.any(Array));
-      expect(body.data.cores[0]).toHaveProperty('serial', 'Merlin3C');
+    });
+
+    describe('Sort Field', () => {
+      it('should sorting with default order', async () => {
+        const app = await createApp();
+        const res = await app.inject({
+          method: 'POST',
+          path: '/graphql',
+          payload: {
+            query: '{ cores(sort: "serial") { serial } }',
+          },
+        });
+        const body = JSON.parse(res.body);
+        expect(res.statusCode).toBe(200);
+        expect(body.data).toHaveProperty('cores', expect.any(Array));
+        expect(body.data.cores[0]).toHaveProperty('serial', 'B0003');
+      });
     });
   });
 

@@ -27,3 +27,43 @@ Endpoint: `/graphql`
 ### Queries
 
 Complete documentation about each query is available through the [SpaceX API Docs](https://docs.spacexdata.com).
+
+| Query       | Parameters                                                                                                        |
+| :---------- | :---------------------------------------------------------------------------------------------------------------- |
+| Capsule     | `id: String`                                                                                                      |
+| Capsules    | `limit: Int`, `offset: Int`, `order: String`, `sort: String`                                                      |
+| Company     |                                                                                                                   |
+| Core        | `id: String`                                                                                                      |
+| Cores       | `limit: Int`, `offset: Int`, `order: String`, `sort: String`                                                      |
+| Crew        | `id: String`                                                                                                      |
+| Crews       | `limit: Int`, `offset: Int`, `order: String`, `sort: String`                                                      |
+| Dragon      | `id: String`                                                                                                      |
+| Dragons     | `limit: Int`, `offset: Int`                                                                                       |
+| History     | `id: String`                                                                                                      |
+| Histories   | `limit: Int`, `offset: Int`, `order: String`, `sort: String`                                                      |
+| Landingpad  | `id: String`                                                                                                      |
+| Landingpads | `limit: Int`, `offset: Int`                                                                                       |
+| Launch      | `id: String`                                                                                                      |
+| Launches    | `range: latest/next/past/upcoming`, `ids: [String]`                                                               |
+| Launchpad   | `id: String`                                                                                                      |
+| Launchpads  | `limit: Int`, `offset: Int`                                                                                       |
+| Payload     | `id: String`                                                                                                      |
+| Payloads    | `limit: Int`, `offset: Int`, `order: String`, `sort: String`                                                      |
+| Roadster    |                                                                                                                   |
+| Rocket      | `id: String`                                                                                                      |
+| Rockets     | `limit: Int`, `offset: Int`                                                                                       |
+| Ship        | `id: String`                                                                                                      |
+| Ships       | `limit: Int`, `offset: Int`, `order: String`, `sort: String`                                                      |
+| Starlink    | `id: String`                                                                                                      |
+| Starlinks   | `limit: Int`, `offset: Int`, `order: String`, `sort: String`                                                      |
+
+#### Parameters
+
+| Parameter      | Description                                                      |
+| :------------- | :--------------------------------------------------------------- |
+| id             | ID of item being requested                                       |
+| ids            | Array of IDs                                                     |
+| limit          | limit on the number of results returned                          |
+| offset         | Offset or skip results from the beginning of the query           |
+| order          | Set order of results (`asc` or `desc`)                           |
+| sort           | Sort results by any value in the response                        |

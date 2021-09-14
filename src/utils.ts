@@ -10,7 +10,12 @@ const body = ({
 }: OutputControl) => {
   const res: any = {};
   const options: any = res['options'] = {};
-  if (limit) options.limit = limit;
+  if (limit) {
+    options.pagination = true;
+    options.limit = limit;
+  } else {
+    options.pagination = false;
+  }
   if (offset) options.offset = offset;
   if (sort) {
     const sortObject = options['sort'] = {};
