@@ -20,7 +20,7 @@
 
 ## Usage
 
-URL: 
+URL: [`http://graphql-spacex-server.herokuapp.com`](http://graphql-spacex-server.herokuapp.com)
 
 Endpoint: `/graphql`
 
