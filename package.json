@@ -17,7 +17,7 @@
     "apollo-datasource-rest": "^3.2.0",
     "apollo-server-core": "^3.3.0",
     "apollo-server-fastify": "^3.3.0",
-    "fastify": "^3.21.0",
+    "fastify": "^3.21.1",
     "graphql": "^15.5.3"
   },
   "devDependencies": {
