@@ -5,6 +5,7 @@
   "main": "dist/app.js",
   "homepage": "https://github.com/iNoles/spacex-server",
   "scripts": {
+    "build": "tsc",
     "lint": "eslint **/*.ts",
     "lint:fix": "eslint **/*.ts --fix",
     "test": "jest"
