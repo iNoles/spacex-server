@@ -11,6 +11,7 @@ export async function createApp(): Promise<FastifyInstance> {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
+    introspection: true,
     dataSources: () => ({api: new SpaceXAPI()}),
     plugins: [
       fastifyAppClosePlugin(app),

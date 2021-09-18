@@ -67,9 +67,9 @@ const typeDefs = gql`
         cto: String
         coo: String
         cto_propulsion: String
-        valuation: Int
+        valuation: Float
         headquarters: Headquarters
-        links: Links
+        links: CompanyLinks
         summary: String
     }
 
@@ -79,7 +79,7 @@ const typeDefs = gql`
         state: String
     }
 
-    type Links {
+    type CompanyLinks {
         website: String
         flickr: String
         twitter: String
@@ -125,11 +125,16 @@ const typeDefs = gql`
         return_payload_vol: Payload_Vol
         pressurized_capsule: Pressurized_Capsule
         trunk: Trunk
+        height_w_trunk: Dimension
+        flickr_images: Flickr_Images
+        diameter: Dimension
+        wikipedia: String
+        description: String
     }
 
     type HeatShield {
         material: String
-        size_meters: Int
+        size_meters: Float
         temp_degrees: Int
         dev_partner: String
     }
@@ -140,7 +145,7 @@ const typeDefs = gql`
     }
 
     type Payload_Vol {
-        cubic_meter: Int
+        cubic_meters: Int
         cubic_feet: Int
     }
 
@@ -151,11 +156,6 @@ const typeDefs = gql`
     type Trunk {
         trunk_volume: Payload_Vol
         cargo: Cargo
-        height_w_trunk: Dimension
-        diameter: Dimension
-        flickr_images: Flickr_Images
-        wikipedia: String
-        description: String
     }
 
     type Cargo {
@@ -274,8 +274,8 @@ const typeDefs = gql`
         type: String
         id: String
         reused: Boolean
-        mass_kg: Int
-        mass_lbs: Int
+        mass_kg: Float
+        mass_lbs: Float
         orbit: String
         reference_system: String
         regime: String
@@ -283,22 +283,22 @@ const typeDefs = gql`
         semi_major_axis_km: Float
         eccentricity: Float
         periapsis_km: Float
-        apoapsis_km: Int
-        inclination_deg: Int
-        period_min: Int
-        lifespan_years: Int
+        apoapsis_km: Float
+        inclination_deg: Float
+        period_min: Float
+        lifespan_years: Float
         epoch: String
-        mean_motion: Int
-        raan: Int
-        arg_of_pericenter: Int
-        mean_anomaly: Int
+        mean_motion: Float
+        raan: Float
+        arg_of_pericenter: Float
+        mean_anomaly: Float
         dragon: Payload_Dragon
         nationalities: [String]
     }
     
     type Payload_Dragon {
-        mass_returned_kg: Int
-        mass_returned_lbs: Int
+        mass_returned_kg: Float
+        mass_returned_lbs: Float
         flight_time_sec: Int
         manifest: String
         water_landing: Boolean
@@ -412,8 +412,8 @@ const typeDefs = gql`
         version: String
         longitude: Float
         latitude: Float
-        height_km: Int
-        velocity_kms: Int
+        height_km: Float
+        velocity_kms: Float
         spaceTrack: SpaceTrack
     }
 
