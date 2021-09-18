@@ -65,6 +65,7 @@ const typeDefs = gql`
         test_sites: Int
         ceo: String
         cto: String
+        coo: String
         cto_propulsion: String
         valuation: Int
         headquarters: Headquarters
