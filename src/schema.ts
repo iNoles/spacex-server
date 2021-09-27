@@ -319,7 +319,7 @@ const typeDefs = gql`
         periapsis_au: Float
         semi_major_axis_au: Float
         eccentricity: Float
-        incination: Float
+        inclination: Float
         longitude: Float
         periapsis_arg: Float
         period_days: Float
