@@ -2,107 +2,107 @@ import {RESTDataSource} from 'apollo-datasource-rest';
 import body from './utils';
 
 class SpaceXAPI extends RESTDataSource {
-    baseURL = 'https://api.spacexdata.com';
+  baseURL = 'https://api.spacexdata.com';
 
-    capsule = ({id}) => this.get(`v4/capsules/${id}`);
+  capsule = ({id}) => this.get(`v4/capsules/${id}`);
 
-    capsules = ({
-      limit, offset, order, sort,
-    }) => this.post(`v4/capsules/query`, body({
-      limit, offset, order, sort,
-    }));
+  capsules = ({
+    limit, offset, order, sort,
+  }) => this.post(`v4/capsules/query`, body({
+    limit, offset, order, sort,
+  }));
 
-    core = ({id}) => this.get(`v4/cores/${id}`);
+  core = ({id}) => this.get(`v4/cores/${id}`);
 
-    cores = ({
-      limit, offset, order, sort,
-    }) => this.post(`v4/cores/query`, body({
-      limit, offset, order, sort,
-    }));
+  cores = ({
+    limit, offset, order, sort,
+  }) => this.post(`v4/cores/query`, body({
+    limit, offset, order, sort,
+  }));
 
-    crew = ({id}) => this.get(`v4/crew/${id}`);
+  crew = ({id}) => this.get(`v4/crew/${id}`);
 
-    crews = ({
-      limit, offset, order, sort,
-    }) => this.post(`v4/crew/query`, body({
-      limit, offset, order, sort,
-    }));
+  crews = ({
+    limit, offset, order, sort,
+  }) => this.post(`v4/crew/query`, body({
+    limit, offset, order, sort,
+  }));
 
-    dragon = ({id}) => this.get(`v4/dragons/${id}`);
+  dragon = ({id}) => this.get(`v4/dragons/${id}`);
 
-    dragons = ({limit, offset}) => this.post(`v4/dragons/query`, body({
-      limit, offset,
-    }));
+  dragons = ({limit, offset}) => this.post(`v4/dragons/query`, body({
+    limit, offset,
+  }));
 
-    history = ({id}) => this.get(`v4/history/${id}`);
+  history = ({id}) => this.get(`v4/history/${id}`);
 
-    histories = ({
-      limit, offset, order, sort,
-    }) => this.post(`v4/history/query`, body({
-      limit, offset, order, sort,
-    }));
+  histories = ({
+    limit, offset, order, sort,
+  }) => this.post(`v4/history/query`, body({
+    limit, offset, order, sort,
+  }));
 
-    company = () => this.get(`v4/company`);
+  company = () => this.get(`v4/company`);
 
-    landingpad = ({id}) => this.get(`v4/landpads/${id}`);
+  landingpad = ({id}) => this.get(`v4/landpads/${id}`);
 
-    landingpads = ({
-      limit, offset,
-    }) => this.post(`v4/landpads/query`, body({limit, offset}));
+  landingpads = ({
+    limit, offset,
+  }) => this.post(`v4/landpads/query`, body({limit, offset}));
 
-    launch = ({id}) => this.get(`v5/launches/${id}`);
+  launch = ({id}) => this.get(`v5/launches/${id}`);
 
-    launches = async ({
-      range, limit, offset, sort, order, ids,
-    }) => {
-      if (ids) return ids.map((id: any) => this.launch({id}));
-      const launches = (
+  launches = async ({
+    range, limit, offset, sort, order, ids,
+  }) => {
+    if (ids) return ids.map((id: any) => this.launch({id}));
+    const launches = (
         limit != null ||offset != null || sort != null || order != null) ?
         await this.post(`v5/launches/query`, body({
           limit, offset, sort, order,
         })): await this.get(`v5/launches/${range || ''}`);
-      return Array.isArray(launches) ? launches : [launches];
-    }
+    return Array.isArray(launches) ? launches : [launches];
+  };
 
-    launchpad = ({id}) => this.get(`v4/launchpads/${id}`);
+  launchpad = ({id}) => this.get(`v4/launchpads/${id}`);
 
-    launchpads = ({limit, offset}) => this.post(`v4/launchpads/query`, body({
-      limit, offset,
-    }));
+  launchpads = ({limit, offset}) => this.post(`v4/launchpads/query`, body({
+    limit, offset,
+  }));
 
-    payload = ({id}) => this.get(`v4/payloads/${id}`);
+  payload = ({id}) => this.get(`v4/payloads/${id}`);
 
-    payloads = ({
-      limit, offset, order, sort,
-    }) => this.post(`v4/payloads/query`, body({
-      limit, offset, order, sort,
-    }));
+  payloads = ({
+    limit, offset, order, sort,
+  }) => this.post(`v4/payloads/query`, body({
+    limit, offset, order, sort,
+  }));
 
-    roadster = () => this.get(`v4/roadster`);
+  roadster = () => this.get(`v4/roadster`);
 
-    rocket = ({id}) => this.get(`v4/rockets/${id}`);
+  rocket = ({id}) => this.get(`v4/rockets/${id}`);
 
-    rockets = ({
-      limit, offset, order, sort,
-    }) => this.post(`v4/rockets/query`, body({
-      limit, offset, order, sort,
-    }));
+  rockets = ({
+    limit, offset, order, sort,
+  }) => this.post(`v4/rockets/query`, body({
+    limit, offset, order, sort,
+  }));
 
-    ship = ({id}) => this.get(`v4/ships/${id}`);
+  ship = ({id}) => this.get(`v4/ships/${id}`);
 
-    ships = ({
-      limit, offset, order, sort,
-    }) => this.post(`v4/ships/query`, body({
-      limit, offset, order, sort,
-    }));
+  ships = ({
+    limit, offset, order, sort,
+  }) => this.post(`v4/ships/query`, body({
+    limit, offset, order, sort,
+  }));
 
-    starlink = ({id}) => this.get(`v4/starlink/${id}`);
+  starlink = ({id}) => this.get(`v4/starlink/${id}`);
 
-    starlinks = ({
-      limit, offset, order, sort,
-    }) => this.post(`v4/starlink/query`, body({
-      limit, offset, order, sort,
-    }));
+  starlinks = ({
+    limit, offset, order, sort,
+  }) => this.post(`v4/starlink/query`, body({
+    limit, offset, order, sort,
+  }));
 }
 
 export default SpaceXAPI;
