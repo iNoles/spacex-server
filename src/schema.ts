@@ -17,7 +17,7 @@ const typeDefs = gql`
         landingpad(id: String!): Landingpad
         landingpads(limit: Int, offset: Int): [Landingpad]
         launch(id: String!): Launch
-        launches(range: LaunchRange, ids: [String]): [Launch]
+        launches(range: LaunchRange, limit: Int, offset: Int, order: Order, sort: String, ids: [String]): [Launch]
         launchpad(id: String!): Launchpad
         launchpads(limit: Int, offset: Int): [Launchpad]
         payload(id: String!): Payload

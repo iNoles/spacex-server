@@ -61,11 +61,14 @@ const resolvers = {
 
     launch: (_: any, {id}: any, {dataSources}: any,
     ) => dataSources.api.launch({id}),
-    launches: (_: any, {
-      range, ids,
-    }: any, {dataSources}: any) => dataSources.api.launches({
-      range, ids,
-    }),
+    launches: async (_: any, {
+      range, limit, offset, order, sort, ids,
+    }: any, {dataSources}: any) => {
+      const results = await dataSources.api.launches({
+        range, limit, offset, order, sort, ids,
+      });
+      return (results[0]['docs'] != null) ? results[0]['docs'] : results;
+    },
 
     launchpad: (_: any, {id}: any,
         {dataSources}: any) => dataSources.api.launchpad({id}),

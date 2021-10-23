@@ -44,7 +44,7 @@ Complete documentation about each query is available through the [SpaceX API Doc
 | Landingpad  | `id: String`                                                                                                      |
 | Landingpads | `limit: Int`, `offset: Int`                                                                                       |
 | Launch      | `id: String`                                                                                                      |
-| Launches    | `range: latest/next/past/upcoming`, `ids: [String]`                                                               |
+| Launches    | `range: latest/next/past/upcoming`, `limit: Int`, `offset: Int`, `order: String`, `sort: String`, `ids: [String]` |
 | Launchpad   | `id: String`                                                                                                      |
 | Launchpads  | `limit: Int`, `offset: Int`                                                                                       |
 | Payload     | `id: String`                                                                                                      |

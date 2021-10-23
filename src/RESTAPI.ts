@@ -53,10 +53,14 @@ class SpaceXAPI extends RESTDataSource {
     launch = ({id}) => this.get(`v5/launches/${id}`);
 
     launches = async ({
-      range, ids,
+      range, limit, offset, sort, order, ids,
     }) => {
       if (ids) return ids.map((id: any) => this.launch({id}));
-      const launches = await this.get(`v5/launches/${range || ''}`);
+      const launches = (
+        limit != null ||offset != null || sort != null || order != null) ?
+        await this.post(`v5/launches/query`, body({
+          limit, offset, sort, order,
+        })): await this.get(`v5/launches/${range || ''}`);
       return Array.isArray(launches) ? launches : [launches];
     }
 
