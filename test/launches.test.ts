@@ -24,6 +24,26 @@ describe('Launches', () => {
     });
   });
 
+  describe('Limit Three Launches', () => {
+    beforeAll(async () => {
+      const app = await createApp();
+      res = await app.inject({
+        method: 'POST',
+        path: '/graphql',
+        payload: {
+          query: '{ launches(limit: 3) { flight_number } }',
+        },
+      });
+      const body = JSON.parse(res.body);
+      launches = body.data.launches;
+    });
+
+    it('should get 3 launches', () => {
+      expect(res.statusCode).toBe(200);
+      expect(launches.length).toEqual(3);
+    });
+  });
+
   describe('Specific Launches', () => {
     beforeAll(async () => {
       const app = await createApp();
