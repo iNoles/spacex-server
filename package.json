@@ -15,7 +15,7 @@
   "license": "GPL-3.0-only",
   "dependencies": {
     "apollo-datasource-rest": "^3.5.0",
-    "apollo-server-core": "^3.6.1",
+    "apollo-server-core": "^3.6.2",
     "apollo-server-fastify": "^3.6.1",
     "apollo-server-plugin-base": "^3.5.1",
     "fastify": "^3.25.3",
