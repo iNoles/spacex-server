@@ -19,7 +19,7 @@
     "apollo-server-fastify": "^3.6.2",
     "apollo-server-plugin-base": "^3.5.1",
     "fastify": "^3.27.0",
-    "graphql": "^16.2.0"
+    "graphql": "^16.3.0"
   },
   "devDependencies": {
     "@types/jest": "^27.4.0",
