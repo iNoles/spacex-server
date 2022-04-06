@@ -18,7 +18,7 @@
     "apollo-server-core": "^3.6.7",
     "apollo-server-fastify": "^3.6.7",
     "apollo-server-plugin-base": "^3.5.1",
-    "fastify": "^3.27.4",
+    "fastify": "^3.28.0",
     "graphql": "^16.3.0"
   },
   "devDependencies": {
