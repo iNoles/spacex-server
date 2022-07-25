@@ -209,6 +209,7 @@ const typeDefs = gql`
         cores: Cores
         links: Links
         auto_update: Boolean
+        rocket: String
     }
 
     type Failures {
@@ -241,11 +242,17 @@ const typeDefs = gql`
         youtube_id: String
         article: String
         wikipedia: String
+        flickr: Flickr
     }
 
     type Patch {
         small: String
         large: String
+    }
+
+    type Flickr {
+        small: [String]
+        original: [String]
     }
 
     type Reddit {

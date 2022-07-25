@@ -75,7 +75,7 @@ describe('Launches', () => {
         path: '/graphql',
         payload: {
           // eslint-disable-next-line max-len
-          query: '{ launch(id: "5eb87cd9ffd86e000604b32a") { flight_number name } }',
+          query: '{ launch(id: "5eb87cd9ffd86e000604b32a") { flight_number name rocket } }',
         },
       });
       const body = JSON.parse(res.body);
@@ -92,7 +92,11 @@ describe('Launches', () => {
       expect(launch).toEqual({
         flight_number: expect.any(Number),
         name: expect.any(String),
+        rocket: expect.any(String),
       });
+    });
+    it('should be FalconSat Rocket ID', () => {
+      expect(launch.rocket).toBe('5e9d0d95eda69955f709d1eb');
     });
   });
 
