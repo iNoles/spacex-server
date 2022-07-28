@@ -44,18 +44,18 @@ const typeDefs = gql`
     }
 
     type Capsule {
-        id: String
-        serial: String
-        status: String
-        type: String
-        reuse_count: Int
-        water_landings: Int
-        land_landings: Int
+        id: String!
+        serial: String!
+        status: String!
+        type: String!
+        reuse_count: Int!
+        water_landings: Int!
+        land_landings: Int!
         last_update: String
     }
 
     type Company {
-        id: String
+        id: String!
         name: String
         founder: String
         founded: Int
@@ -87,36 +87,36 @@ const typeDefs = gql`
     }
 
     type Core {
-        id: String
-        serial: String
+        id: String!
+        serial: String!
         block: Int
-        status: String
-        reuse_count: Int
-        rtls_attempts: Int
-        rtls_landings: Int
-        asds_attempts: Int
+        status: String!
+        reuse_count: Int!
+        rtls_attempts: Int!
+        rtls_landings: Int!
+        asds_attempts: Int!
         last_update: String
-        asds_landings: Int
+        asds_landings: Int!
     }
 
     type Crew {
-        id: String
+        id: String!
         name: String
         image: String
         wikipedia: String
         launches: [String]
-        status: String
+        status: String!
     }
 
     type Dragon {
-        id: String
-        name: String
-        type: String
-        active: Boolean
-        crew_capacity: Int
-        orbit_duration_yr: Int
-        dry_mass_kg: Int
-        dry_mass_lb: Int
+        id: String!
+        name: String!
+        type: String!
+        active: Boolean!
+        crew_capacity: Int!
+        orbit_duration_yr: Int!
+        dry_mass_kg: Int!
+        dry_mass_lb: Int!
         first_flight: String
         heat_shield: HeatShield
         launch_payload_mass: Payload_Mass
@@ -133,8 +133,8 @@ const typeDefs = gql`
     }
 
     type HeatShield {
-        material: String
-        size_meters: Float
+        material: String!
+        size_meters: Float!
         temp_degrees: Int
         dev_partner: String
     }
@@ -173,42 +173,42 @@ const typeDefs = gql`
     }
 
     type Landingpad {
-        id: String
+        id: String!
         name: String
         full_name: String
-        status: String
+        status: String!
         type: String
         locality: String
         region: String
         latitude: Float
         longitude: Float
-        landing_attempts: Int
-        landing_successes: Int
+        landing_attempts: Int!
+        landing_successes: Int!
         wikipedia: String
         details: String
     }
 
     type Launch {
-        id: String
-        flight_number: Int
-        name: String
-        date_utc: String
-        date_unix: Int
-        date_local: String
-        date_precision: String
+        id: String!
+        flight_number: Int!
+        name: String!
+        date_utc: String!
+        date_unix: Int!
+        date_local: String!
+        date_precision: String!
         static_fire_date_utc: String
         static_fire_date_unix: Int
-        tdb: Boolean
-        net: Boolean
+        tdb: Boolean!
+        net: Boolean!
         window: Int
         success: Boolean
         failures: [Failures]
-        upcoming: Boolean
+        upcoming: Boolean!
         details: String
         fairings: Fairing
         cores: Cores
         links: Links
-        auto_update: Boolean
+        auto_update: Boolean!
         rocket: String
     }
 
@@ -263,24 +263,24 @@ const typeDefs = gql`
     }
 
     type Launchpad {
-        id: String
+        id: String!
         name: String
         full_name: String
-        status: String
+        status: String!
         locality: String
         region: String
         timezone: String
         latitude: Float
         longitude: Float
-        launch_attempts: Int
-        launch_successes: Int
+        launch_attempts: Int!
+        launch_successes: Int!
     }
 
     type Payload {
         name: String
         type: String
-        id: String
-        reused: Boolean
+        id: String!
+        reused: Boolean!
         mass_kg: Float
         mass_lbs: Float
         orbit: String
@@ -313,7 +313,7 @@ const typeDefs = gql`
     }
 
     type Roadster {
-        id: String
+        id: String!
         name: String
         launch_date_utc: String
         launch_date_unix: Int
@@ -469,8 +469,8 @@ const typeDefs = gql`
     }
 
     type Ship {
-        name: String
-        id: String
+        name: String!
+        id: String!
         legacy_id: String
         model: String
         type: String
