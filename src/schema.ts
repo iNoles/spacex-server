@@ -192,11 +192,11 @@ const typeDefs = gql`
         id: String!
         flight_number: Int!
         name: String!
-        date_utc: String!
+        date_utc: DateTime!
         date_unix: Int!
         date_local: String!
         date_precision: String!
-        static_fire_date_utc: String
+        static_fire_date_utc: DateTime
         static_fire_date_unix: Int
         tdb: Boolean!
         net: Boolean!
@@ -315,7 +315,7 @@ const typeDefs = gql`
     type Roadster {
         id: String!
         name: String
-        launch_date_utc: String
+        launch_date_utc: DateTime
         launch_date_unix: Int
         launch_mass_kg: Int
         launch_mass_lbs: Int
@@ -496,7 +496,7 @@ const typeDefs = gql`
     type History {
         id: String
         title: String
-        event_date_utc: String
+        event_date_utc: DateTime
         event_date_unix: Int
         details: String
         links: HistoryLinks
