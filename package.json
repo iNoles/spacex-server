@@ -23,7 +23,7 @@
     "graphql-scalars": "^1.17.0"
   },
   "devDependencies": {
-    "@types/jest": "29.0.0",
+    "@types/jest": "29.0.1",
     "@typescript-eslint/eslint-plugin": "5.36.1",
     "@typescript-eslint/parser": "5.36.1",
     "eslint": "8.23.0",
